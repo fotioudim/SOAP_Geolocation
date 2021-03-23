@@ -20,6 +20,7 @@ Maven build tool is used. Two build profiles are provided, one for supporting co
 CREATE DATABASE Geolocation;
 USE Geolocation;
 
+```
 -- Table `geolocation`.`point`
 CREATE TABLE IF NOT EXISTS `geolocation`.`point` (
   `name` VARCHAR(45) NOT NULL,
@@ -51,6 +52,7 @@ INSERT INTO point(name, point, counter)
 ('Sérres',ST_GeomFromText('POINT(41.0833 23.5500)'),0),
 ('Alexandroúpoli',ST_GeomFromText('POINT(40.8500 25.8667)'),0),
 ('Ródos',ST_GeomFromText('POINT(36.4412 28.2225)'),0)
+```
 
 ### Testing with SOAPUI
 The service can also be tested using SOAPUI, API Testing tool, using the wsdl found in http://localhost:8080/ws/geolocation.wsdl when the service is running.
