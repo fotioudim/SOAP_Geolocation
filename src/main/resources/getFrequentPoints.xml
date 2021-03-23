@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://dfotiou.com/api/soap/geolocation">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:getNearestPointRequest>
+            <gs:threshold>3</gs:threshold>
+        </gs:getNearestPointRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

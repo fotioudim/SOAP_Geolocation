@@ -1,0 +1,37 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://dfotiou.com/api/soap/geolocation"
+           targetNamespace="http://dfotiou.com/api/soap/geolocation" elementFormDefault="qualified">
+
+    <xs:element name="getNearestPointRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="latitude" type="xs:double"/>
+                <xs:element name="longitude" type="xs:double"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getNearestPointResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="getFrequentPointsRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="threshold" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="getFrequentPointsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="names" type="xs:string" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

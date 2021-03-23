@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://dfotiou.com/api/soap/geolocation" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://dfotiou.com/api/soap/geolocation" targetNamespace="http://dfotiou.com/api/soap/geolocation">
+  <wsdl:types>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://dfotiou.com/api/soap/geolocation">
+
+    <xs:element name="getNearestPointRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="latitude" type="xs:double"/>
+                <xs:element name="longitude" type="xs:double"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getNearestPointResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="getFrequentPointsRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="threshold" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="getFrequentPointsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" name="names" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getNearestPointRequest">
+    <wsdl:part element="tns:getNearestPointRequest" name="getNearestPointRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getFrequentPointsResponse">
+    <wsdl:part element="tns:getFrequentPointsResponse" name="getFrequentPointsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getNearestPointResponse">
+    <wsdl:part element="tns:getNearestPointResponse" name="getNearestPointResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getFrequentPointsRequest">
+    <wsdl:part element="tns:getFrequentPointsRequest" name="getFrequentPointsRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="GeolocationPort">
+    <wsdl:operation name="getNearestPoint">
+      <wsdl:input message="tns:getNearestPointRequest" name="getNearestPointRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getNearestPointResponse" name="getNearestPointResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFrequentPoints">
+      <wsdl:input message="tns:getFrequentPointsRequest" name="getFrequentPointsRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:getFrequentPointsResponse" name="getFrequentPointsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GeolocationPortSoap11" type="tns:GeolocationPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getNearestPoint">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getNearestPointRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getNearestPointResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFrequentPoints">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getFrequentPointsRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getFrequentPointsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GeolocationPortService">
+    <wsdl:port binding="tns:GeolocationPortSoap11" name="GeolocationPortSoap11">
+      <soap:address location="http://localhost:8080/ws"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
