@@ -17,10 +17,9 @@ Apache Tomcat is used as an application server, as the default option of Springb
 ### Build Tool
 Maven build tool is used. Two build profiles are provided, one for supporting connection to MySQL database server, the other supporting connection with the in-memory H2 database. H2 database is chosen as the default because it can be set up during application startup and the final jar can be run without any other actions. For production purposes a Mysql database could be set up running the following commands at the mysql prompt as an example.
 
+```
 CREATE DATABASE Geolocation;
 USE Geolocation;
-
-```
 --------------------------------------------------------
 -- Table `geolocation`.`point`
 --------------------------------------------------------
