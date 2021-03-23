@@ -21,7 +21,9 @@ CREATE DATABASE Geolocation;
 USE Geolocation;
 
 ```
+--------------------------------------------------------
 -- Table `geolocation`.`point`
+--------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `geolocation`.`point` (
   `name` VARCHAR(45) NOT NULL,
   `point` POINT NOT NULL,
@@ -59,4 +61,4 @@ The service can also be tested using SOAPUI, API Testing tool, using the wsdl fo
 sample requests "getFrequentPoints.xml" and "getNearestPoint.xml" in src/main/resources of source code.
 
 ### Web Service start up
-Run command: java -jar SOAP-h2.jar
+Run command: ``` java -jar SOAP-h2.jar ```
