@@ -20,9 +20,7 @@ Maven build tool is used. Two build profiles are provided, one for supporting co
 CREATE DATABASE Geolocation;
 USE Geolocation;
 
---------------------------------------------------------
 -- Table `geolocation`.`point`
---------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `geolocation`.`point` (
   `name` VARCHAR(45) NOT NULL,
   `point` POINT NOT NULL,
