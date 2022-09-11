@@ -3,3 +3,5 @@
 **/META-INF/JAXB/
 /bin/
 .project
+
+.classpath

@@ -138,7 +138,6 @@
 					</execution>
 				</executions>
 				<configuration>
-					<outputDirectory>${project.basedir}/src/main/java</outputDirectory>
 					<sources>
 						<source>${project.basedir}/src/main/resources/geolocation.xsd</source>
 					</sources>
