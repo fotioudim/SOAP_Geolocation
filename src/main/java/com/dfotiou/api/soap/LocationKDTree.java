@@ -67,9 +67,9 @@ public class LocationKDTree {
         final double[] p = new double[K];
 
         Node(final double latitude, final double longitude) {
-            p[0] = (double) (Math.cos(Math.toRadians(latitude)) * Math.cos(Math.toRadians(longitude)));
-            p[1] = (double) (Math.cos(Math.toRadians(latitude)) * Math.sin(Math.toRadians(longitude)));
-            p[2] = (double) (Math.sin(Math.toRadians(latitude)));
+            p[0] = (Math.cos(Math.toRadians(latitude)) * Math.cos(Math.toRadians(longitude)));
+            p[1] = (Math.cos(Math.toRadians(latitude)) * Math.sin(Math.toRadians(longitude)));
+            p[2] = (Math.sin(Math.toRadians(latitude)));
         }
 
         Node(final Point point) {
@@ -94,20 +94,20 @@ public class LocationKDTree {
         return NodeComparator.values()[i];
     }
 
-    private static enum NodeComparator implements Comparator<Node> {
-        x {
+    private enum NodeComparator implements Comparator<Node> {
+        X {
             @Override
             public int compare(final Node a, final Node b) {
                 return Double.compare(a.p[0], b.p[0]);
             }
         },
-        y {
+        Y {
             @Override
             public int compare(final Node a, final Node b) {
                 return Double.compare(a.p[1], b.p[1]);
             }
         },
-        z {
+        Z {
             @Override
             public int compare(final Node a, final Node b) {
                 return Double.compare(a.p[2], b.p[2]);

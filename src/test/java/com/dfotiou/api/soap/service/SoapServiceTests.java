@@ -50,12 +50,12 @@ public class SoapServiceTests {
 		LocationKDTree pointTree = new LocationKDTree(points);
 		
 		Point nearestPoint = pointTree.findNearest(37.9500, 23.7000); // Piraeus coordinates
-		assertEquals(nearestPoint.getName(), "Athens", "Closest city to Piraeus is Athens.");
+		assertEquals("Athens", nearestPoint.getName(), "Closest city to Piraeus is Athens.");
 		
 		nearestPoint = pointTree.findNearest(41.0833, 23.5500); // Sérres coordinates
-		assertEquals(nearestPoint.getName(), "Thessaloníki", "Closest city to Sérres is Thessaloníki.");
+		assertEquals("Thessaloníki", nearestPoint.getName(), "Closest city to Sérres is Thessaloníki.");
 		
 		nearestPoint = pointTree.findNearest(38.3917, 21.8275); // Náfpaktos coordinates
-		assertEquals(nearestPoint.getName(), "Pátra", "Closest city to Náfpaktos is Pátra.");
+		assertEquals("Pátra", nearestPoint.getName(), "Closest city to Náfpaktos is Pátra.");
 	}
 }

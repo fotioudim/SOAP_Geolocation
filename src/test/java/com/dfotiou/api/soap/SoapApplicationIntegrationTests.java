@@ -28,10 +28,6 @@ class SoapApplicationIntegrationTests {
     }
     
     @Test
-	void contextLoads() {
-	}
-    
-    @Test
     public void whenRequestNearestPoint_thenResponseIsNotNull() {
         WebServiceTemplate ws = new WebServiceTemplate(marshaller);
         GetNearestPointRequest request = new GetNearestPointRequest();
