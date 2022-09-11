@@ -9,8 +9,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.dfotiou.api.soap.LocationKDTree;
-import com.dfotiou.api.soap.Point;
+import com.dfotiou.api.soap.model.LocationKDTree;
+import com.dfotiou.api.soap.model.Point;
 
 @SpringBootTest
 class SoapServiceTests {

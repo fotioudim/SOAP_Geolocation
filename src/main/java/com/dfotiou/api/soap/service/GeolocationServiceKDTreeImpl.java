@@ -4,7 +4,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.dfotiou.api.soap.LocationKDTree;
+import com.dfotiou.api.soap.model.LocationKDTree;
 import com.dfotiou.api.soap.repository.GeolocationRepository;
 
 @Service("geolocationServiceKDTree")

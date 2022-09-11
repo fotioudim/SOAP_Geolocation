@@ -10,8 +10,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.Assert;
 
-import com.dfotiou.api.soap.LocationKDTree;
-import com.dfotiou.api.soap.Point;
+import com.dfotiou.api.soap.model.LocationKDTree;
+import com.dfotiou.api.soap.model.Point;
 
 @Repository("geolocationRepository")
 public class GeolocationJdbcRepositoryImpl implements GeolocationRepository {

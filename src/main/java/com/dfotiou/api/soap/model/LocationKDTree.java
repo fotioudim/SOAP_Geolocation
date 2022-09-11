@@ -1,4 +1,4 @@
-package com.dfotiou.api.soap;
+package com.dfotiou.api.soap.model;
 
 import java.util.ArrayList;
 import java.util.Collections;
