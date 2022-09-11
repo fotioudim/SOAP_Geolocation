@@ -32,9 +32,7 @@ public class GeolocationServiceKDTreeImpl implements GeolocationService{
 
 	@Override
 	public List<String> findFrequentPoints(int threshold) {
-		List<String> points = geolocationRepository.getCounters(threshold);
-		
-		return points;
+		return geolocationRepository.getCounters(threshold);
 	}
 
 }

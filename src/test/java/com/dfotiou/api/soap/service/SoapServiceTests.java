@@ -13,7 +13,7 @@ import com.dfotiou.api.soap.LocationKDTree;
 import com.dfotiou.api.soap.Point;
 
 @SpringBootTest
-public class SoapServiceTests {
+class SoapServiceTests {
 	
 	private static final List<Point> points = new ArrayList<Point>(3);
 	

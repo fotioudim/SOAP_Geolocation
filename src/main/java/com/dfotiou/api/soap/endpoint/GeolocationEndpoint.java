@@ -21,7 +21,7 @@ public class GeolocationEndpoint {
 	private GeolocationService geolocationService;
 
 	Logger logger = LoggerFactory.getLogger(GeolocationEndpoint.class);
-	
+
 	@Autowired
 	public GeolocationEndpoint(GeolocationService geolocationService) {
 		this.geolocationService = geolocationService;
@@ -31,18 +31,18 @@ public class GeolocationEndpoint {
 	@ResponsePayload
 	public GetNearestPointResponse getNearestPoint(@RequestPayload GetNearestPointRequest request) {
 		logger.info("Get nearest point for lat:{}, lon:{}", request.getLatitude(), request.getLongitude());
-		
+
 		GetNearestPointResponse response = new GetNearestPointResponse();
-		response.setName(geolocationService.findNearestPoint(request.getLatitude(),request.getLongitude()));
+		response.setName(geolocationService.findNearestPoint(request.getLatitude(), request.getLongitude()));
 
 		return response;
 	}
-	
+
 	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "getFrequentPointsRequest")
 	@ResponsePayload
 	public GetFrequentPointsResponse getFrequentPoints(@RequestPayload GetFrequentPointsRequest request) {
 		logger.info("Get Points with counter larger than: {}", request.getThreshold());
-		
+
 		GetFrequentPointsResponse response = new GetFrequentPointsResponse();
 		response.getNames().addAll(geolocationService.findFrequentPoints(request.getThreshold()));
 

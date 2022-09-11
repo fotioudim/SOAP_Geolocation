@@ -3,7 +3,7 @@
 ### SOAP development style
 Contract-first approach is used, where we start with the WSDL contract, and use Java to implement said contract . The pros of contract-first are: a) easy for both producer and consumer to see what the contract is about, what is needed and what is expected. b) reusable schema and xsd, agnostic of the programming language implemented.
 
-The web service domain is defined in an XML schema file (XSD) that Spring-WS will automatically export as a WSDL. Using Mojo's JAXB-2 Maven plugin we generate Java “SOAP-related” classes from XSDs based on the JAXB 2.x implementation .
+The web service domain is defined in an XML schema file (XSD) that Spring-WS will automatically export as a WSDL. Using Mojo's JAXB-2 Maven plugin we generate Java “SOAP-related” classes from XSDs based on the JAXB 2.x implementation.
 
 ### Find closest point to given latitude/longitude - Nearest neighbor search
 Nearest neighbor search (NNS) is the optimization problem of finding the point in a given set that is closest to a given point. Using Linear search is the simplest solution to the NNS problem but has a running time of O(dN), where d is the dimensionality. Another more efficient way is to use space-partitioning methods, such as [Kd-tree](https://en.wikipedia.org/wiki/K-d_tree) average complexity is O(log N) in the case of randomly distributed points, worst case complexity is O(kN^(1-1/k)). 3d-tree implementation is a good algorithm as far as the time complexity is concerned, although for bigger accuracy at calculating the surface distance of points in the Earth “sphere” [Great-circle_distance](https://en.wikipedia.org/wiki/Great-circle_distance) algorithms can also be used.

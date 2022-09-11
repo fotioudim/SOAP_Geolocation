@@ -16,7 +16,7 @@ import com.dfotiou.api.soap.Point;
 @Repository("geolocationRepository")
 public class GeolocationJdbcRepositoryImpl implements GeolocationRepository {
 	
-	Logger logger = LoggerFactory.getLogger(GeolocationRepository.class);
+	Logger logger = LoggerFactory.getLogger(GeolocationJdbcRepositoryImpl.class);
 	
 	@Autowired
 	JdbcTemplate jdbcTemplate;
@@ -28,14 +28,12 @@ public class GeolocationJdbcRepositoryImpl implements GeolocationRepository {
 		List<Point> points = jdbcTemplate.query("SELECT name, ST_X(point) as latitude, ST_Y(point) as longitude FROM Point", new BeanPropertyRowMapper<Point>(Point.class));
 		Assert.notNull(points, "The points must not be null");
 		
-		LocationKDTree pointTree = new LocationKDTree(points);
-		return pointTree;
+		return new LocationKDTree(points);
 	}
 	
 	public void updateCounter(String name) {
 		logger.info("Update counter of {} via {}", name, GeolocationRepository.class.getSimpleName());
 		jdbcTemplate.update("UPDATE Point SET counter = counter+1 WHERE name = ?", name);
-		return;
 	}
 	
 	public List<String> getCounters(int threshold) {

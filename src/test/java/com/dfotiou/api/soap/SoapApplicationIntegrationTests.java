@@ -28,7 +28,7 @@ class SoapApplicationIntegrationTests {
     }
     
     @Test
-    public void whenRequestNearestPoint_thenResponseIsNotNull() {
+    void whenRequestNearestPoint_thenResponseIsNotNull() {
         WebServiceTemplate ws = new WebServiceTemplate(marshaller);
         GetNearestPointRequest request = new GetNearestPointRequest();
         request.setLatitude(0);
@@ -38,7 +38,7 @@ class SoapApplicationIntegrationTests {
     }
     
     @Test
-    public void whenRequestFrequentPoints_thenResponseIsNotNull() {
+    void whenRequestFrequentPoints_thenResponseIsNotNull() {
         WebServiceTemplate ws = new WebServiceTemplate(marshaller);
         GetFrequentPointsRequest request = new GetFrequentPointsRequest();
         request.setThreshold(0);
